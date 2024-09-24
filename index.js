@@ -4,7 +4,6 @@ const button_donation = document.getElementById("btn-donation");
 const button_history = document.getElementById("btn-history");
 
 button_donation.addEventListener("click", () => {
-  // document.getElementById('modal').showModal();
   button_donation.classList.add("bg-blue-500", "text-white");
   button_history.classList.remove("bg-blue-500", "text-white");
 });
@@ -56,7 +55,7 @@ function inputFieldValueById(id) {
   return amount;
 }
 
-function runningBalance(id) {
+function currentBalance(id) {
   const balance = document.getElementById(id).innerText;
   const updateBalance = parseFloat(balance);
   return updateBalance;
@@ -85,8 +84,10 @@ document
     }
     // update cards total donation
     const currentAmount = parseFloat(
-      document.getElementById("total-donate-amount-noakhali").innerText
+      currentBalance("total-donate-amount-noakhali")
     );
+    //   document.getElementById("total-donate-amount-noakhali").innerText
+    // );
 
     const updateAmount = currentAmount + donateAmount;
     // update initial balance
@@ -143,8 +144,10 @@ document
     }
     // update cards total donation
     const currentAmount = parseFloat(
-      document.getElementById("total-donate-amount-feni").innerText
+      currentBalance("total-donate-amount-feni")
     );
+    //   document.getElementById("total-donate-amount-feni").innerText
+    // );
 
     const updateAmount = currentAmount + donateAmount;
     // update initial balance
@@ -200,8 +203,10 @@ document
     }
     // update cards total donation
     const currentAmount = parseFloat(
-      document.getElementById("total-donate-amount-quota").innerText
+      currentBalance("total-donate-amount-quota")
     );
+    //   document.getElementById("total-donate-amount-quota").innerText
+    // );
 
     const updateAmount = currentAmount + donateAmount;
     // update initial balance
